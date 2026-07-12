@@ -7,7 +7,7 @@ export function Settings() {
   const { mode, setMode, colorScheme, setColorScheme } = useThemeStore();
   const { soundEnabled, toggleSound, volume, setVolume, zenMode, toggleZenMode, keyboardVisible, toggleKeyboard } = useSettingsStore();
 
-  const colorSchemeOptions: ColorScheme[] = ['default', 'neo', 'pastel'];
+  const colorSchemeOptions: ColorScheme[] = ['default', 'neo', 'pastel', 'moon', 'evil', 'cute', 'coffee', 'ocean', 'forest', 'inferno', 'royal', 'frost', 'cyber'];
 
   return (
     <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto animate-in fade-in zoom-in-95 duration-300">

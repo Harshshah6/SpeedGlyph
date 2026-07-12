@@ -5,7 +5,7 @@ export type Radius = 'small' | 'medium' | 'large' | 'pill' | 'square';
 export type Shadow = 'none' | 'soft' | 'floating' | 'neo-brutalism' | 'material';
 export type Border = 'thin' | 'medium' | 'thick' | 'brutalist' | 'rounded' | 'square';
 export type FontFamily = 'Inter' | 'Geist' | 'JetBrains Mono' | 'Cascadia' | 'IBM Plex' | 'Fira Code' | 'Roboto Mono';
-export type ColorScheme = 'default' | 'neo' | 'pastel';
+export type ColorScheme = 'default' | 'neo' | 'pastel' | 'moon' | 'evil' | 'cute' | 'coffee' | 'ocean' | 'forest' | 'inferno' | 'royal' | 'frost' | 'cyber';
 
 export interface ThemeState {
   mode: 'light' | 'dark';

@@ -65,6 +65,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     root.style.setProperty('--font-family', fontMap[fontFamily]);
     root.style.fontFamily = fontMap[fontFamily];
 
+    // Color Scheme logic
+    root.setAttribute('data-color-scheme', colorScheme);
+
     // Custom Colors (if provided)
     if (customColors) {
       Object.entries(customColors).forEach(([key, value]) => {
@@ -77,7 +80,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         root.style.setProperty('--border', '#000000');
         root.style.setProperty('--text', '#000000');
         root.style.setProperty('--muted', '#666666');
-        root.style.setProperty('--accent', '#ff00ff'); // bright magenta
+        root.style.setProperty('--accent', '#ff00ff');
         root.style.setProperty('--success', '#00ff00');
         root.style.setProperty('--warning', '#ffff00');
         root.style.setProperty('--danger', '#ff0000');
@@ -87,7 +90,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         root.style.setProperty('--border', '#ffffff');
         root.style.setProperty('--text', '#ffffff');
         root.style.setProperty('--muted', '#aaaaaa');
-        root.style.setProperty('--accent', '#00ffff'); // bright cyan
+        root.style.setProperty('--accent', '#00ffff');
         root.style.setProperty('--success', '#00ff00');
         root.style.setProperty('--warning', '#ffff00');
         root.style.setProperty('--danger', '#ff0000');
@@ -115,8 +118,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         root.style.setProperty('--danger', '#d9b998');
       }
     } else {
-      // Remove custom overrides so default CSS applies
-      ['background', 'surface', 'border', 'text', 'muted', 'accent', 'success', 'warning', 'danger'].forEach(key => {
+      // Remove custom overrides so default or CSS-based themes apply
+      ['background', 'surface', 'border', 'text', 'muted', 'accent', 'success', 'warning', 'danger', 'primary', 'secondary'].forEach(key => {
         root.style.removeProperty(`--${key}`);
       });
     }

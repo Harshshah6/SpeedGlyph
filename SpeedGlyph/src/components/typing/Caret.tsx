@@ -12,16 +12,13 @@ export function Caret() {
     // Find the character element at the current cursor index
     const charElement = document.getElementById(`char-${cursor}`);
     if (charElement) {
-      const rect = charElement.getBoundingClientRect();
-      const parentRect = charElement.closest('.typing-container')?.getBoundingClientRect();
+      const caretHeight = 28;
       
-      if (parentRect) {
-        setPosition({
-          top: rect.top - parentRect.top + (rect.height - 28) / 2,
-          left: rect.left - parentRect.left,
-          height: 28,
-        });
-      }
+      setPosition({
+        top: charElement.offsetTop + (charElement.offsetHeight - caretHeight) / 2,
+        left: charElement.offsetLeft,
+        height: caretHeight,
+      });
     }
   }, [cursor, status]);
 
