@@ -11,6 +11,7 @@ import { Keyboard, History, Moon, Settings as SettingsIcon, X } from "lucide-rea
 import { useSettingsStore } from "@/stores/useSettingsStore";
 import { useTypingEngine } from "@/stores/useTypingEngine";
 import { motion, AnimatePresence } from "motion/react";
+import logoImg from "@/assets/logo.png";
 
 function App() {
   const [activeTab, setActiveTab] = useState<'practice' | 'dashboard'>('practice');
@@ -51,8 +52,8 @@ function App() {
 
       {/* Header */}
       <header className={`flex justify-between items-center px-6 py-3 border-b border-[color:var(--color-border)] transition-opacity duration-500 ${isZenModeActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveTab('practice')}>
-          <div className="text-2xl text-[color:var(--color-primary)] font-bold">⌬</div>
+        <div className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab('practice')}>
+          <img src={logoImg} alt="SpeedGlyph Logo" className="w-8 h-8 rounded-md shadow-sm" />
           <h1 className="text-xl font-bold tracking-tight font-serif italic">SpeedGlyph</h1>
         </div>
         

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import { X, Minus, Square } from 'lucide-react';
+import logoImg from '@/assets/logo.png';
 
 const appWindow = getCurrentWindow();
 
@@ -30,7 +31,7 @@ export const Titlebar = () => {
       {/* Window Controls (Left side for Mac, Right side for Windows - we'll just put them on right for now, but user requested 'Apple Human Interface' & 'Windows 11' vibes, so maybe left side like Arc? Let's put them on the right for Windows default feel) */}
       
       <div className="flex-1 flex items-center gap-2 pointer-events-none px-2 text-sm font-semibold text-[color:var(--color-muted)]">
-        <span className="text-[color:var(--color-primary)]">⌬</span> SpeedGlyph
+        <img src={logoImg} alt="logo" className="w-4 h-4 rounded-sm" /> SpeedGlyph
       </div>
 
       <div className="flex items-center gap-1">
