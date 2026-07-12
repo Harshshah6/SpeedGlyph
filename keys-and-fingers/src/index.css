@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  
+  --font-serif: "Instrument Serif", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Soft Brutalism Palette */
+:root {
+  --background: #FFF9EE; /* Soft cream */
+  --surface: #FFFFFF;
+  --border: #1E1E1E; /* Hard dark border */
+  --text: #1A1A1A;
+  --muted: #6B7280;
+  --primary: #FF5A5F; /* Soft striking red */
+  --secondary: #4A90E2; 
+  --accent: #F9A826;
+  --success: #34D399;
+  --warning: #FBBF24;
+  --danger: #F87171;
+}
+
+[data-theme="dark"] {
+  --background: #191917; /* Deep soft warm slate */
+  --surface: #22221F;
+  --border: #4A4A48;
+  --text: #F3F3F1;
+  --muted: #8A8A86;
+  --primary: #FF6B70;
+  --secondary: #5CA0F2;
+  --accent: #F9B240;
+  --success: #22C55E;
+  --warning: #FBBF24;
+  --danger: #EF4444;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  
+  /* Soft Brutalism variables */
+  --radius: 0.25rem; /* Slightly rounded for soft brutalism */
+  --border-width: 2px; /* Thick borders */
+  --shadow-custom: 4px 4px 0px var(--border); /* Solid block shadow */
+}
+
+/* Global utility classes for our custom variables */
+@layer utilities {
+  .rounded-custom {
+    border-radius: var(--radius);
+  }
+  .border-custom {
+    border-width: var(--border-width);
+    border-color: var(--color-border);
+  }
+  .shadow-custom {
+    box-shadow: var(--shadow-custom);
+  }
+}
