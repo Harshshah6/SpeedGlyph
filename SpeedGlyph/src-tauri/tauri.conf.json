@@ -2,7 +2,7 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "SpeedGlyph",
   "version": "0.1.0",
-  "identifier": "com.suraguru.keys-and-fingers",
+  "identifier": "com.suraguru.speedglyph",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "keys-and-fingers",
+        "title": "SpeedGlyph",
         "width": 1200,
         "height": 800,
         "minWidth": 800,

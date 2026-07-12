@@ -7,7 +7,7 @@ export async function getDb(): Promise<Database> {
   if (dbInstance) return dbInstance;
   
   try {
-    const db = await Database.load('sqlite:keys_and_fingers.db');
+    const db = await Database.load('sqlite:speedglyph.db');
     
     // Run migrations
     await db.execute(`
