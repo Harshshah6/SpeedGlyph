@@ -52,10 +52,7 @@ function App() {
       {/* Header */}
       <header className={`flex justify-between items-center px-6 py-3 border-b border-[color:var(--color-border)] transition-opacity duration-500 ${isZenModeActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveTab('practice')}>
-          <div className="w-6 h-6 bg-[color:var(--color-primary)] rounded-sm grid grid-cols-3 grid-rows-3 gap-[1px] p-[2px]">
-            <div className="bg-[color:var(--color-background)] col-span-2 row-span-2"></div>
-            <div className="bg-[color:var(--color-background)] col-start-3 row-start-3"></div>
-          </div>
+          <div className="text-2xl text-[color:var(--color-primary)] font-bold">⌬</div>
           <h1 className="text-xl font-bold tracking-tight font-serif italic">SpeedGlyph</h1>
         </div>
         

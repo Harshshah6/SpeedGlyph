@@ -4,12 +4,10 @@ import { useMemo, memo } from 'react';
 
 const WordToken = memo(({ 
   token, 
-  typed, 
-  cursor 
+  typed 
 }: { 
   token: { chars: { char: string; index: number }[] }; 
   typed: string; 
-  cursor: number; 
 }) => {
   return (
     <div className="flex">
@@ -52,7 +50,6 @@ const WordToken = memo(({
 export function WordView() {
   const words = useTypingEngine((state) => state.words);
   const typed = useTypingEngine((state) => state.typed);
-  const cursor = useTypingEngine((state) => state.cursor);
   
   // We split the words by spaces to render them grouped,
   // but we maintain the global character index for ID mapping.
@@ -83,7 +80,7 @@ export function WordView() {
   return (
     <div className="flex flex-wrap text-2xl font-medium tracking-wide text-[color:var(--color-muted)] w-full text-left leading-relaxed">
       {wordTokens.map((token, wIdx) => (
-        <WordToken key={wIdx} token={token} typed={typed} cursor={cursor} />
+        <WordToken key={wIdx} token={token} typed={typed} />
       ))}
     </div>
   );

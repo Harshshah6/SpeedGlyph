@@ -30,7 +30,7 @@ export const Titlebar = () => {
       {/* Window Controls (Left side for Mac, Right side for Windows - we'll just put them on right for now, but user requested 'Apple Human Interface' & 'Windows 11' vibes, so maybe left side like Arc? Let's put them on the right for Windows default feel) */}
       
       <div className="flex-1 flex items-center gap-2 pointer-events-none px-2 text-sm font-semibold text-[color:var(--color-muted)]">
-        SpeedGlyph
+        <span className="text-[color:var(--color-primary)]">⌬</span> SpeedGlyph
       </div>
 
       <div className="flex items-center gap-1">
