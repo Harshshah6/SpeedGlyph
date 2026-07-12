@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/logo.png" alt="SpeedGlyph Logo" width="128" style="border-radius: 24px;" />
+  <img src="SpeedGlyph/src/assets/logo.png" alt="SpeedGlyph Logo" width="128" style="border-radius: 24px;" />
   <h1>SpeedGlyph</h1>
   <p><strong>A blazing fast, aesthetically pleasing typing practice application built for speed and precision.</strong></p>
   <p>Practice your typing skills across various modes and track your progress in real-time.</p>
