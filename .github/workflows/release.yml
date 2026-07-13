@@ -3,9 +3,9 @@ name: Release
 on:
   push:
     branches:
-      - main          # Rolling builds on every commit
+      - main
     tags:
-      - "v*"          # Stable releases only when tagged
+      - "v*"
 
 permissions:
   contents: write
@@ -55,3 +55,12 @@ jobs:
           releaseDraft: false
           prerelease: ${{ steps.vars.outputs.prerelease }}
           args: --target x86_64-pc-windows-msvc
+
+      - name: Upload portable EXE
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.vars.outputs.tag }}
+          files: |
+            src-tauri/target/x86_64-pc-windows-msvc/release/SpeedGlyph.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
