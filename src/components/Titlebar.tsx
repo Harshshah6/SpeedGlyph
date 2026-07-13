@@ -2,10 +2,15 @@ import { useState, useEffect } from 'react';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import { X, Minus, Square } from 'lucide-react';
 import logoImg from '@/assets/logo.png';
+import { isTauri } from "@tauri-apps/api/core";
 
-const appWindow = getCurrentWindow();
 
 export const Titlebar = () => {
+  
+  if(!isTauri()) return null;
+
+  const appWindow = getCurrentWindow();
+
   const [isMaximized, setIsMaximized] = useState(false);
 
   useEffect(() => {
