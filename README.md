@@ -7,6 +7,17 @@
 
 <br />
 
+<div align="center">
+
+[![Release CI](https://github.com/suraguru/SpeedGlyph/actions/workflows/release.yml/badge.svg)](https://github.com/suraguru/SpeedGlyph/actions/workflows/release.yml)
+![GitHub repo size](https://img.shields.io/github/repo-size/suraguru/SpeedGlyph)
+![GitHub last commit](https://img.shields.io/github/last-commit/suraguru/SpeedGlyph)
+<!-- ![GitHub release](https://img.shields.io/github/v/release/suraguru/SpeedGlyph) -->
+<!-- ![GitHub Downloads](https://img.shields.io/github/downloads/suraguru/SpeedGlyph/total) -->
+<!-- ![GitHub Stars](https://img.shields.io/github/stars/suraguru/SpeedGlyph) -->
+
+</div>
+
 ## Features
 
 - **Dynamic Typing Engine**: Real-time feedback, precise caret alignment, and visual error indications.
