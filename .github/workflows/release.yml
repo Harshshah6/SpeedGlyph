@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main          # Rolling builds on every commit
+    tags:
+      - "v*"          # Stable releases only when tagged
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Set release variables
+        id: vars
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            echo "tag=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
+            echo "name=SpeedGlyph ${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+          else
+            echo "tag=rolling" >> $GITHUB_OUTPUT
+            echo "name=SpeedGlyph Rolling" >> $GITHUB_OUTPUT
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build and Release Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ steps.vars.outputs.tag }}
+          releaseName: ${{ steps.vars.outputs.name }}
+          releaseBody: |
+            See the assets to download this version and install.
+          releaseDraft: false
+          prerelease: ${{ steps.vars.outputs.prerelease }}
+          args: --target x86_64-pc-windows-msvc
